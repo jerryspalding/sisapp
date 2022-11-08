@@ -1,0 +1,16 @@
+#FROM rhel7.9:jdk11-mvn
+#FROM acdeva0xxb5l129.usarec.army.mil:5050/dso/sisapp/rhel7:jdk11-mvn
+FROM 192.168.251.72:5050/spaldingj/sisapp/rhel7:mvn
+
+ARG UID 
+ARG GID 
+
+# User gitlab-runner is added using the same uid and gid of the host system.
+# This container image will be used to run the 'mvn install' command, with the git repo mapped into the container.
+
+RUN adduser -u $UID gitlab-runner && \
+   groupmod -g $GID gitlab-runner && \
+   mkdir /opt/sisapp && \
+   chown -R gitlab-runner:gitlab-runner /opt/sisapp
+
+USER gitlab-runner

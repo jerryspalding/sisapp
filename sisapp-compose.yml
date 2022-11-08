@@ -1,0 +1,44 @@
+version: '3.8'
+services: 
+    nginx-svc:
+        image: "NGINX IMAGE"
+        ports:
+          - 7443:443
+        restart: always
+        networks: 
+          - sisapp-network
+    sisapp-svc:
+        depends_on: 
+          - nginx-svc
+          - mariadb-svc
+        image: "SISAPP IMAGE"
+        environment:
+          SPRING_DATASOURCE: "jdbc:mysql://mariadb-svc:3306/sisappdb?allowPublicKeyRetrieval=true&useSSL=false"
+          SPRING_DATASOURCE_USERNAME: "sisapp_user"
+          SPRING_DATASOURCE_PASSWORD: "H0rc$y$TemU$eR"
+          SPRING_JWT_KEY: "yunDsr1Vy+IABMrBPk3v5M6hg72oYFh0ol2oQKqYzkVLdZqUx+aoT5Zo89Jw7ZLDMdMBb+rSvjbvFTq/S78KJWMRZ0CS1mKilrnZjqa7S4bCuLvDgR4WDSUj0QT53Keeb4ZL7Kl9DCTgJwbEVC7sE0uqU0AEK7yeXnr+jWdht+oDOcqdQgRW7q88McSUJnyPCSC0+VNVGWz7hpyrkJoNJ8d3HWPEeV1/X6Psrw=="
+        expose:
+          - "8080"
+        restart: always
+        networks: 
+          - sisapp-network
+    mariadb-svc:
+        image: "MARIA DB IMAGE"
+        expose:
+          - "3306"
+        restart: always
+        environment:
+          MYSQL_DATABASE: "sisappdb"
+          MYSQL_USER: "sisapp_user"
+          MYSQL_PASSWORD: "H0rc$y$TemU$eR"
+          MYSQL_ROOT_PASSWORD: "H0r$eeMWhy$QueLR00t"
+        volumes: 
+          - sisapp-vol:/var/lib/mysql
+        networks: 
+          - sisapp-network
+
+volumes:
+    sisapp-vol:
+
+networks:
+    sisapp-network:

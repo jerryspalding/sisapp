@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <groupId>mil.army.rsnd</groupId>
+    <artifactId>SISApp</artifactId>
+    <version>${revision}</version>
+    <name>SISApp</name>
+    <description>Sundry Items Sample Application</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>sisapp-frontend</module>
+        <module>sisapp-backend</module>
+    </modules>
+    <properties>
+        <java.version>11</java.version>
+        <node.version>v16.13.2</node.version>
+        <npm.version>6.14.17</npm.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <revision>1.00.001</revision>
+    </properties>
+
+</project>

@@ -1,0 +1,12 @@
+mil/army/rsnd/sisappbackend/AuthenticationFilter.class
+mil/army/rsnd/sisappbackend/domain/UserRepository.class
+mil/army/rsnd/sisappbackend/service/AuthenticationService.class
+mil/army/rsnd/sisappbackend/LoginFilter.class
+mil/army/rsnd/sisappbackend/domain/AccountCredentials.class
+mil/army/rsnd/sisappbackend/web/SundryItemController.class
+mil/army/rsnd/sisappbackend/SecurityConfig.class
+mil/army/rsnd/sisappbackend/SisappBackendApplication.class
+mil/army/rsnd/sisappbackend/domain/SundryItem.class
+mil/army/rsnd/sisappbackend/domain/SisAppUser.class
+mil/army/rsnd/sisappbackend/domain/SundryItemRepository.class
+mil/army/rsnd/sisappbackend/service/UserDetailServiceImpl.class
